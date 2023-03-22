@@ -1,0 +1,17 @@
+{
+    "name": "vendor-name/bankas3",
+    "description": "bla bla",
+    "license": "mit",
+    "autoload": {
+        "psr-4": {
+            "VendorName\\Bankas3\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "dinako81",
+            "email": "dina.koliata@gmail.com"
+        }
+    ],
+    "require": {}
+}
