@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Controler\HomeController;
+
 
 class App {
 
@@ -23,4 +25,25 @@ class App {
 
 
     }
+
+
+// funkcija kuri atvaizduos templlates
+// buferio startas globalus
+
+public static function views($tmp, $data = [])
+    {
+        $path = __DIR__ . '/../views/';
+        extract($data);
+
+        ob_start();
+        require $path . 'top.php';
+        require $path . $tmp . '.php';
+        require $path . 'bottom.php';
+        $html = ob_get_contents();
+        ob_end_clean();
+        return $html;
+
+    }
+
+
 }
