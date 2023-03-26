@@ -1,19 +1,15 @@
 <?php
-
-namespace App\HomeController;
-// kad uzloadinti
-
+namespace App\Controllers;
 use App\App;
 
-class HomeController{
+class HomeController {
 
-    public function Home ()
-    
+    public function home()
     {
-            return App::view('home/index', [
-                'title' => 'Home'
-            ]);
+        
+        return App::views('home/index', [
+            'title' => 'Home'
+        ]);
     }
-
 
 }

@@ -10823,3 +10823,24 @@ body {
   margin: 0;
   min-height: 100vh;
 }
+
+.home {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.home h1, .home .h1 {
+  color: skyblue;
+  font-size: 150px;
+  line-height: 1;
+}
+.home h1 .sub, .home .h1 .sub {
+  color: crimson;
+  font-size: 30px;
+  line-height: 1;
+}
+.home h1 .sub.space, .home .h1 .sub.space {
+  letter-spacing: 4.4px;
+}

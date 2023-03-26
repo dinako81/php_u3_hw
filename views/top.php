@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src=""></script>
-    <!-- irasyti pilna skripto kelia http:// -->
-    <title><?= $title ?? 'untitled' ?> </title>
+    <script src="http://bankas3.lt/app.js"></script>
+    <link rel="stylesheet" href="http://bankas3.lt/app.css">
+    <title><?= $title ?? 'Untitled' ?></title>
 </head>
 
 <body>
