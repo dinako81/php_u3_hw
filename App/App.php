@@ -3,12 +3,15 @@ namespace App;
 
 use App\Controllers\HomeController;
 use App\Controllers\ClientsController;
+use App\Controllers\LoginController;
 
 
 class App {
 
     public static function process()
     {
+        session_start();
+
         $url = explode('/', $_SERVER['REQUEST_URI']);
         array_shift($url);
         return self::router($url);
@@ -46,6 +49,19 @@ class App {
 
         if ($method == 'POST' && count($url) == 3 && $url[0] === 'clients' && $url[1] === 'delete') {
             return (new ClientsController)->delete($url[2]);
+        }
+
+
+        if ($method == 'GET' && count($url) == 1 && $url[0] === 'login') {
+            return (new LoginController)->show();
+        }
+
+        if ($method == 'POST' && count($url) == 1 && $url[0] === 'login') {
+            return (new LoginController)->login();
+        }
+
+        if ($method == 'POST' && count($url) == 1 && $url[0] === 'logout') {
+            return (new LoginController)->logout();
         }
 
         else {

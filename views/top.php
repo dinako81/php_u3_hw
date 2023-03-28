@@ -13,3 +13,4 @@
 <body>
 
     <?php require __DIR__ . '/nav.php' ?>
+    <?php require __DIR__ . '/messages.php' ?>
