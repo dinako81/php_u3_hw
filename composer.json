@@ -13,5 +13,7 @@
             "email": "dina.koliata@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "ramsey/uuid": "^4.7"
+    }
 }

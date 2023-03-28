@@ -2,6 +2,7 @@
 namespace App;
 
 use App\Controllers\HomeController;
+use App\Controllers\ClientsController;
 
 
 class App {
@@ -24,6 +25,13 @@ class App {
             return (new HomeController)->home();
         }
 
+        if ($method == 'GET' && count($url) == 2 && $url[0] === 'clients' && $url[1] === 'create') {
+            return (new ClientsController)->create();
+        }
+        if ($method == 'POST' && count($url) == 2 && $url[0] === 'clients' && $url[1] === 'create') {
+            return (new ClientsController)->store();
+        }
+
         else {
             return  '<h1>404 PAGE NOT FOUND</h1>';
         }
@@ -43,5 +51,9 @@ class App {
         return $html;
     }
 
-
+    public static function redirect($url)
+    {
+        header('Location:' . URL . $url);
+        return ' ';
+    }
 }
