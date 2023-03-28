@@ -37,6 +37,8 @@ class ClientsController {
         $data = [];
         $data['name'] = $_POST['name'];
         $data['surname'] = $_POST['surname'];
+        $data['personal_code'] = $_POST['personal_code'];
+        $data['acc_balance'] = $_POST['acc_balance'];
         $data['tt'] = isset($_POST['tt']) ? 1 : 0;
         (new Json)->create($data);
         Messages::msg()->addMessage('New client was created', 'success');
@@ -68,6 +70,8 @@ class ClientsController {
         $data = [];
         $data['name'] = $_POST['name'];
         $data['surname'] = $_POST['surname'];
+        $data['personal_code'] = $_POST['personal_code'];
+        $data['acc_balance'] = $_POST['acc_balance'];
         $data['tt'] = isset($_POST['tt']) ? 1 : 0;
         (new Json)->update($id, $data); 
         Messages::msg()->addMessage('New client was edited', 'warning');

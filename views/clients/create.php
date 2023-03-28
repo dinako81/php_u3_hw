@@ -17,9 +17,24 @@
                             <input type="text" class="form-control" name="surname">
                             <div class="form-text">Please add client surname here</div>
                         </div>
+                        <div class="mb-3">
+                            <label class="form-label">Client Personal code</label>
+                            <input type="text" class="form-control" name="personal_code">
+                            <div class="form-text">Please add client personal code here</div>
+                        </div>
+                        <div class="mb-3 readonly">
+                            <label class="form-label">Client Account number</label>
+                            <input type="text" class="form-control readonly" name="acc_number">
+                            <div class="form-text"></div>
+                        </div>
+                        <div class="mb-3 invisible">
+                            <label class="form-label">Client Account balance</label>
+                            <input type="text" class="form-control " name="acc_balance" value="0">
+                            <div class="form-text"></div>
+                        </div>
                         <div class="mb-3 form-check">
                             <input type="checkbox" class="form-check-input" id="tt" name="tt">
-                            <label class="form-check-label" for="tt">Has TikTok account</label>
+                            <label class="form-check-label" for="tt">Married</label>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>

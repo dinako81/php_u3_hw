@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-8">
+        <div class="col-10">
             <div class="card mt-5">
                 <div class="card-header">
                     <h1>Clients List</h1>
@@ -13,7 +13,9 @@
                                 <div class="client-info">
                                     <?= $client['name'] ?>
                                     <?= $client['surname'] ?>
-                                    <span><?= $client['tt'] ? 'TIK TOK' : 'FB' ?></span>
+                                    <?= $client['personal_code'] ?>
+                                    <?= $client['acc_balance'] ?>
+                                    <span><?= $client['tt'] ? 'married' : 'free' ?></span>
                                 </div>
                                 <div class="buttons">
                                     <a href="<?= URL ?>clients/show/<?= $client['id'] ?>" class="btn btn-info">Show</a>

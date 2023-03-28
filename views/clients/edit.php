@@ -3,7 +3,7 @@
         <div class="col-8">
             <div class="card mt-5">
                 <div class="card-header">
-                    <h1>Add Client</h1>
+                    <h1>Edit Client</h1>
                 </div>
                 <div class="card-body">
                     <form action="<?= URL ?>clients/edit/<?= $client['id'] ?>" method="post">
@@ -17,10 +17,16 @@
                             <input type="text" class="form-control" name="surname" value="<?= $client['surname'] ?>">
                             <div class="form-text">Please add client surname here</div>
                         </div>
+                        <div class="mb-3">
+                            <label class="form-label">Client Account balance</label>
+                            <input type="text" class="form-control" name="acc balance"
+                                value="<?= $client['acc_balance'] ?>">
+                            <div class="form-text">Please add money here</div>
+                        </div>
                         <div class="mb-3 form-check">
                             <input type="checkbox" class="form-check-input" id="tt" name="tt"
                                 <?= $client['tt'] ? 'checked' : '' ?>>
-                            <label class="form-check-label" for="tt">Has TikTok account</label>
+                            <label class="form-check-label" for="tt">Married</label>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
