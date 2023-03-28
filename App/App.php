@@ -44,6 +44,10 @@ class App {
             return (new ClientsController)->update($url[2]);
         }
 
+        if ($method == 'POST' && count($url) == 3 && $url[0] === 'clients' && $url[1] === 'delete') {
+            return (new ClientsController)->delete($url[2]);
+        }
+
         else {
             return  '<h1>404 PAGE NOT FOUND</h1>';
         }

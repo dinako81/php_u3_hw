@@ -38,7 +38,8 @@ class Json implements DataBase {
 
     function delete(int $clientId) : void
     {
-        
+        $this->data = array_filter($this->data, fn($d) => $d['id'] != $clientId);
+        $this->data = array_values($this->data);
     }
 
     function show(int $clientId) : array
