@@ -31,6 +31,9 @@ class App {
         if ($method == 'POST' && count($url) == 2 && $url[0] === 'clients' && $url[1] === 'create') {
             return (new ClientsController)->store();
         }
+        if ($method == 'GET' && count($url) == 1 && $url[0] === 'clients') {
+            return (new ClientsController)->index();
+        }
 
         else {
             return  '<h1>404 PAGE NOT FOUND</h1>';

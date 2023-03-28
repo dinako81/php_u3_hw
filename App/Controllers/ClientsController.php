@@ -1,5 +1,6 @@
 <?php
 namespace App\Controllers;
+
 use App\App;
 use App\DB\Json;
 
@@ -28,7 +29,7 @@ class ClientsController {
         $data['surname'] = $_POST['surname'];
         $data['tt'] = isset($_POST['tt']) ? 1 : 0;
         (new Json)->create($data);
-        return App::redirect('clients'); 
+        return App::redirect('clients');
     }
 
 

@@ -1,35 +1,33 @@
 <?php
 namespace App\DB;
 
-use Ramsey\Uuid\Uuid;
+// use Ramsey\Uuid\Uuid;
 
 
 class Json implements DataBase {
 
     private $data;
-
-    //naujo jason failo sukurimas
+    
     public function __construct()
-    { 
+    {
         if (!file_exists(__DIR__ .'/data.json')) {
             file_put_contents(__DIR__ .'/data.json', json_encode([]));
         }
+
         $this->data = json_decode(file_get_contents(__DIR__ .'/data.json'), 1);
-    // 1 - kad butu masyvas masyve - objektas masyve.
+    
     }
 
-    // įrašymas - kai baigiam skripto darba i jasona irasom kas buvo data. Skaitymas ir irasymas vyks automatiskai.
-
-    public function __destruct ()
+    public function __destruct()
     {
-    file_put_contents(__DIR__ .'/data.json', json_encode($this->data));
+        file_put_contents(__DIR__ .'/data.json', json_encode($this->data));
     }
 
     function create(array $clientData) : void
     {
-        $id = $uuid = Uuid::uuid4()->toString();
+        $id = rand(10000000, 99999999);
         $clientData['id'] = $id;
-        $this->data = $clientData;
+        $this->data[] = $clientData;
     }
 
     function update(int $clientId, array $clientData) : void
@@ -49,7 +47,7 @@ class Json implements DataBase {
     
     function showAll() : array
     {
-        
+        return $this->data;
     }
 
 }
