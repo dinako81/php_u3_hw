@@ -22,14 +22,14 @@
                             <input type="text" class="form-control" name="personal_code">
                             <div class="form-text">Please add client personal code here</div>
                         </div>
-                        <div class="mb-3 readonly">
+                        <div class="mb-3">
                             <label class="form-label">Client Account number</label>
-                            <input type="text" class="form-control readonly" name="acc_number">
-                            <div class="form-text"></div>
+                            <input readonly type="text" class="form-control" name="acc_number">
+                            <div class=" form-text"> </div>
                         </div>
                         <div class="mb-3 invisible">
                             <label class="form-label">Client Account balance</label>
-                            <input type="text" class="form-control " name="acc_balance" value="0">
+                            <input type="number" class="form-control " name="acc_balance" value="0">
                             <div class="form-text"></div>
                         </div>
                         <div class="mb-3 form-check">
@@ -37,9 +37,10 @@
                             <label class="form-check-label" for="tt">Married</label>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
                 </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 </div>

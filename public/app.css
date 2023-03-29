@@ -10846,6 +10846,10 @@ body {
   letter-spacing: 4.1px;
 }
 
+body {
+  background-color: #cccccc;
+}
+
 .client-line {
   display: flex;
   width: 100%;

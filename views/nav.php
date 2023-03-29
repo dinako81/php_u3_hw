@@ -23,9 +23,9 @@ use App\Services\Auth;
             </ul>
             <span class="navbar-text">
                 <?php if (Auth::get()->isAuth()) : ?>
-                <span><?= Auth::get()->getName() ?></span>
+                <span><b><i><?= Auth::get()->getName() ?></i></b></span>
                 <form class="logout" action="<?= URL ?>logout" method="post">
-                    <button type="submit">logout</button>
+                    <button class="btn btn-outline-dark" type="submit">logout</button>
                 </form>
                 <?php else : ?>
                 <a class="nav-link" href="<?= URL ?>login">login</a>
