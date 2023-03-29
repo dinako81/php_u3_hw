@@ -47,6 +47,20 @@ class App {
             return (new ClientsController)->update($url[2]);
         }
 
+        if ($method == 'GET' && count($url) == 3 && $url[0] === 'clients' && $url[1] === 'addfunds') {
+            return (new ClientsController)->addFunds($url[2]);
+        }
+
+        if ($method == 'POST' && count($url) == 3 && $url[0] === 'clients' && $url[1] === 'addfunds') {
+            return (new ClientsController)->update($url[2]);
+        }
+        if ($method == 'GET' && count($url) == 3 && $url[0] === 'clients' && $url[1] === 'withdrawfunds') {
+            return (new ClientsController)->withdrawfunds($url[2]);
+        }
+
+        if ($method == 'POST' && count($url) == 3 && $url[0] === 'clients' && $url[1] === 'withdrawfunds') {
+            return (new ClientsController)->update($url[2]);
+        }
         if ($method == 'POST' && count($url) == 3 && $url[0] === 'clients' && $url[1] === 'delete') {
             return (new ClientsController)->delete($url[2]);
         }

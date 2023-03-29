@@ -65,6 +65,26 @@ class ClientsController {
         ]);
     }
 
+    public function addFunds($id)
+    {
+        $client = (new Json)->show($id);
+
+        return App::views('clients/addfunds', [
+            'title' => 'Add Funds',
+            'client' => $client
+        ]);
+    }
+
+    public function withdrawFunds($id)
+    {
+        $client = (new Json)->show($id);
+
+        return App::views('clients/withdrawfunds', [
+            'title' => 'Withdraw Funds',
+            'client' => $client
+        ]);
+    }
+
     public function update($id)
     {
         $data = [];
