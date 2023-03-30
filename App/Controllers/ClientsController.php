@@ -110,12 +110,14 @@ class ClientsController {
 
     public function delete($id)
     {
+        $client = (new Json)->show($id);
+
         if ($client['acc_balance'] > 0) {
-            Messages::msg()->addMessage('Labai viskas blogai', 'danger');
+            Messages::msg()->addMessage('Cannot delete client with a positive account balancei', 'danger');
             return App::redirect('clients');
         } else{
         (new Json)->delete($id);
-        Messages::msg()->addMessage('The client gone', 'warning');
+        Messages::msg()->addMessage('The client has been deleted', 'warning');
         return App::redirect('clients');
         }
     }
