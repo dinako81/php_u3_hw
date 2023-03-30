@@ -24,7 +24,8 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Client Account number</label>
-                            <input readonly type="text" class="form-control" name="acc_number">
+                            <input readonly type="text" class="form-control" name="acc_number"
+                                value="<?= $client['acc_number'] ?>">
                             <div class=" form-text"> </div>
                         </div>
                         <div class="mb-3 invisible">

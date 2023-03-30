@@ -7,7 +7,7 @@
                 </div>
                 <div class="card-body">
                     <ul class="list-group">
-                        <?php foreach($clients as $client) : ?>
+
                         <table class="table">
                             <thead>
                                 <tr>
@@ -22,9 +22,11 @@
                                     <th scope="col"></th>
                                 </tr>
                             </thead>
+
                             <tbody>
+                                <?php foreach($clients as $client) : ?>
                                 <tr>
-                                    <td>ID</td>
+                                    <td>123</td>
                                     <td><?= $client['name'] ?></td>
                                     <td><?= $client['surname'] ?></td>
                                     <td><?= $client['personal_code'] ?></td>
@@ -45,9 +47,11 @@
                                         </form>
                                     </td>
                                 </tr>
+                                <?php endforeach ?>
                             </tbody>
+
                         </table>
-                        <?php endforeach ?>
+
                     </ul>
                 </div>
             </div>

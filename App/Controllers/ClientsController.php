@@ -32,7 +32,7 @@ class ClientsController {
         ]);
     }
     public function store()
-    {
+    {  
         if ($client['personal_code'] == $_POST['personal_code']) {
             Messages::msg()->addMessage('Personal ID is not unique!', 'warning');
             return App::redirect('clients/create');
@@ -62,7 +62,10 @@ class ClientsController {
             return App::redirect('clients/create');
         } else {
 
+
         $data = [];
+        $id = rand(1, 100000);
+        $data['user_id'] = $id;
         $data['name'] = $_POST['name'];
         $data['surname'] = $_POST['surname'];
         $data['personal_code'] = $_POST['personal_code'];
@@ -74,6 +77,7 @@ class ClientsController {
         return App::redirect('clients');
         }
     }
+    
 
     public function show($id)
     {

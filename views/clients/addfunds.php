@@ -20,11 +20,7 @@
                             <input type="text" name="acc_balance" placeholder="euro">
                             <div class="form-text"><i>(Add some money here)</i></div>
                         </div>
-                        <!-- <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="tt" name="tt"
-                                <?= $client['tt'] ? 'checked' : '' ?>>
-                            <label class="form-check-label" for="tt">Married</label>
-                        </div> -->
+
                         <button type="submit" class="btn btn-primary">Add Funds</button>
                     </form>
                 </div>
