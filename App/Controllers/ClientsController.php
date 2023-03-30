@@ -19,16 +19,28 @@ class ClientsController {
     public function index()
     {
         $clients = (new Json)->showAll();
+
+        $sort = $_GET['sort'] ?? '';
+        if ($sort == 'surname_asc') {
+            usort($clients, fn($a, $b) => $a['surname'] <=> $b['surname']);
+        }
+        elseif ($sort == 'surname_desc') {
+            usort($clients, fn($a, $b) => $b['surname'] <=> $a['surname']);
+        }
         return App::views('clients/index', [
             'title' => 'Clients List',
-            'clients' => $clients
+            'clients' => $clients,
+            'sort' => $sort
         ]);
     }
 
     public function create()
     {
+        $iban = 'LT' . rand(0, 9) . rand(0, 9) . ' ' . '0014' . ' ' . '7' . rand(0, 9) . rand(0, 9) . rand(0, 9) . ' ' . rand(0, 9) . rand(0, 9) . rand(0, 9) . rand(0, 9)  . ' ' . rand(0, 9) . rand(0, 9) . rand(0, 9) . rand(0, 9);
+        
         return App::views('clients/create', [
-            'title' => 'New Client'
+            'title' => 'New Client',
+            'iban' => $iban,
         ]);
     }
     public function store()
@@ -61,15 +73,13 @@ class ClientsController {
             Messages::msg()->addMessage('Only letters are allowed in surname!', 'warning');
             return App::redirect('clients/create');
         } else {
-
-
+ 
         $data = [];
-        $id = rand(1, 100000);
         $data['user_id'] = $id;
         $data['name'] = $_POST['name'];
         $data['surname'] = $_POST['surname'];
         $data['personal_code'] = $_POST['personal_code'];
-        $data['acc_number'] = 'LT' . rand(0, 9) . rand(0, 9) . ' ' . '0014' . ' ' . '7' . rand(0, 9) . rand(0, 9) . rand(0, 9) . ' ' . rand(0, 9) . rand(0, 9) . rand(0, 9) . rand(0, 9)  . ' ' . rand(0, 9) . rand(0, 9) . rand(0, 9) . rand(0, 9);
+        $data['acc_number'] = $_POST['acc_number'];
         $data['acc_balance'] = $_POST['acc_balance'];
         $data['tt'] = isset($_POST['tt']) ? 1 : 0;
         (new Json)->create($data);
@@ -117,7 +127,7 @@ class ClientsController {
         $client = (new Json)->show($id);
 
         if ($client['acc_balance'] > 0) {
-            Messages::msg()->addMessage('Cannot delete client with a positive account balancei', 'danger');
+            Messages::msg()->addMessage('Cannot delete client with a positive account balance!', 'danger');
             return App::redirect('clients');
         } else{
         (new Json)->delete($id);
@@ -125,5 +135,4 @@ class ClientsController {
         return App::redirect('clients');
         }
     }
-    
 }

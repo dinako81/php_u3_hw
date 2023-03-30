@@ -1,3 +1,17 @@
+<form action="<?= URL ?>clients" method="get">
+    <fieldset>
+        <div class="d-flex justify-content-end" style="margin-right: 20px">
+            <select name="sort">
+                <option value="surname_asc" <?php if ($sort == 'surname_asc') echo 'selected' ?>>Surname A-Z
+                </option>
+                <option value="surname_desc" <?php if ($sort == 'surname_desc') echo 'selected' ?>>Surname Z-A
+                </option>
+            </select>
+            <button type="submit">sort</button>
+        </div>
+    </fieldset>
+</form>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-12">
@@ -26,7 +40,7 @@
                             <tbody>
                                 <?php foreach($clients as $client) : ?>
                                 <tr>
-                                    <td>123</td>
+                                    <td><?= $client['id'] ?></td>
                                     <td><?= $client['name'] ?></td>
                                     <td><?= $client['surname'] ?></td>
                                     <td><?= $client['personal_code'] ?></td>
@@ -43,7 +57,7 @@
                                     </td>
                                     <td>
                                         <form action="<?= URL ?>clients/delete/<?= $client['id'] ?>" method="post">
-                                            <button type="submit" class="btn btn-danger">delete</button>
+                                            <button type="submit" class="btn btn-danger">Delete</button>
                                         </form>
                                     </td>
                                 </tr>

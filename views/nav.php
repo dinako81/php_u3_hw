@@ -21,14 +21,33 @@ use App\Services\Auth;
                     <a class="nav-link" href="<?= URL ?>clients/create">Add Client</a>
                 </li>
             </ul>
+
+            <!-- <div class="contacts">
+                <h4 class="contacts-title">kontaktai</h4>
+                <div class="contacts-info">
+                    <p class="contacts-number">
+                        <i class="fa-solid fa-phone"></i>
+                        +370 00 00000
+                    </p>
+                    <p class="contacts-location">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Pensininkų g. 14-3, Vilnius
+                    </p>
+                    <p class="contacts-hours">
+                        <i class="fa-solid fa-clock"></i>
+                        Pr - Pn 09-18, Št - Sk 10-17
+                    </p>
+                </div>
+            </div> -->
+
             <span class="navbar-text">
                 <?php if (Auth::get()->isAuth()) : ?>
                 <span><b><i><?= Auth::get()->getName() ?></i></b></span>
                 <form class="logout" action="<?= URL ?>logout" method="post">
-                    <button class="btn btn-outline-dark" type="submit">logout</button>
+                    <button class="btn btn-outline-dark" type="submit">Logout</button>
                 </form>
                 <?php else : ?>
-                <a class="nav-link" href="<?= URL ?>login">login</a>
+                <a class="nav-link" href="<?= URL ?>login">Login</a>
                 <?php endif ?>
             </span>
         </div>

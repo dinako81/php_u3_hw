@@ -22,13 +22,13 @@ class FundsController {
         if ($_POST['acc_balance'] < 0)
         {
             Messages::msg()->addMessage('The sum must be positive!', 'danger');
-            return App::redirect('clients');
+            return App::redirect('clients/addfunds/'. $id);
         }
 
         if (!is_numeric($_POST['acc_balance'] )) 
         {
             Messages::msg()->addMessage('The value should be only number!', 'danger');
-            return App::redirect('clients');
+            return App::redirect('clients/addfunds/'. $id);
         }
         else{
             $client = (new Json)->show($id);
@@ -42,7 +42,7 @@ class FundsController {
             ];
         (new Json)->update($id, $data); 
         Messages::msg()->addMessage('Funds has added', 'success');
-        return App::redirect('clients');
+        return App::redirect('clients/addfunds/'. $id);
     }
 }
 
@@ -66,13 +66,13 @@ class FundsController {
         if ($_POST['acc_balance'] < 0)
         {
             Messages::msg()->addMessage('The sum must be positive!', 'danger');
-            return App::redirect('clients');
+            return App::redirect('clients/withdrawfunds/'. $id);
         }
 
         if (!is_numeric($_POST['acc_balance'] )) 
         {
             Messages::msg()->addMessage('The value should be only number!', 'danger');
-            return App::redirect('clients');
+            return App::redirect('clients/withdrawfunds/'. $id);
         }
         else{
             $client = (new Json)->show($id);
@@ -86,7 +86,7 @@ class FundsController {
             ];
         (new Json)->update($id, $data); 
         Messages::msg()->addMessage('Funds has withdrawed', 'success');
-        return App::redirect('clients');
+        return App::redirect('clients/withdrawfunds/'. $id);
     }
 }
     }

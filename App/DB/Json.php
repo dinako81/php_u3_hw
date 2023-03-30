@@ -25,7 +25,7 @@ class Json implements DataBase {
 
     function create(array $clientData) : void
     {
-        $id = rand(10000000, 99999999);
+        $id = rand(10000, 99999);
         $clientData['id'] = $id;
         $this->data[] = $clientData;
     }
