@@ -10832,15 +10832,17 @@ body {
   height: 100vh;
 }
 .home h1, .home .h1 {
-  color: skyblue;
-  font-size: 150px;
+  color: black;
+  font-size: 80px;
   line-height: 1;
   letter-spacing: 6px;
 }
 .home h1 .sub, .home .h1 .sub {
-  color: crimson;
-  font-size: 30px;
+  color: black;
+  font-size: 20px;
   line-height: 1;
+  align-items: center;
+  justify-content: center;
 }
 .home h1 .sub.space, .home .h1 .sub.space {
   letter-spacing: 4.1px;
@@ -10870,6 +10872,16 @@ body {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
+}
+
+.nav-my {
+  background-color: #cccccc !important;
+}
+
+.date-end {
+  color: black;
+  position: absolute;
+  bottom: 0;
 }
 
 .msg-container {

@@ -36,6 +36,13 @@ class App {
             return (new ClientsController)->index();
         }
 
+        if ($method == 'GET' && count($url) == 1 && $url[0] === 'clients?sort=surname_asc') {
+            return (new ClientsController)->index();
+        }
+        if ($method == 'GET' && count($url) == 1 && $url[0] === 'clients?sort=surname_desc') {
+            return (new ClientsController)->index();
+        }
+
         if ($method == 'GET' && count($url) == 3 && $url[0] === 'clients' && $url[1] === 'show') {
             return (new ClientsController)->show($url[2]);
         }

@@ -1,5 +1,6 @@
 <div class="home">
-    <h1>HOME
-        <div class="sub space">Clients Managment System</div>
+    <h1>MAKE MONEY MOVES
     </h1>
+    <!-- <img class="" src="./src/img/bebras.jpg" alt="Bebras"> </img> -->
+
 </div>
